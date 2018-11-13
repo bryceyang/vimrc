@@ -20,7 +20,7 @@ set nocompatible
 "=====================================================
 "" plug settings
 "=====================================================
-call plug#begin(~/.vim/plugs)
+call plug#begin('~/.vim/plugs')
 
 
     "-------------------=== Code/Project navigation ===-------------
