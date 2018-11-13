@@ -9,7 +9,6 @@
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
-let $plug=$vimhome."/plugs/vim-plug"
 
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
@@ -59,7 +58,7 @@ call plug#begin('~/.vim/plugs')
     Plug 'terryma/vim-multiple-cursors'
 
     "-------------------=== Python  ===-----------------------------
-    Plug 'python-mode/python-mode'                   " Python mode (docs, refactor, lints...)
+    Plug 'python-mode/python-mode', {'branch': 'develop'}                   " Python mode (docs, refactor, lints...)
     Plug 'scrooloose/syntastic'               " Syntax checking Plug for Vim
 
     "-------------------=== 
