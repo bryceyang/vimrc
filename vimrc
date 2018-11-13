@@ -32,7 +32,7 @@ call plug#begin('~/.vim/plugs')
     "-------------------=== Other ===-------------------------------
     Plug 'bling/vim-airline'                  " Lean & mean status/tabline for vim
     Plug 'vim-airline/vim-airline-themes'     " Themes for airline
-    Plug 'Lokaltog/powerline'                 " {'rtp': 'powerline/bindings/vim/'}   Powerline fonts Plug
+    Plug 'powerline/powerline'                 " {'rtp': 'powerline/bindings/vim/'}   Powerline fonts Plug
     Plug 'rosenfeld/conque-term'              " Consoles as buffers
     Plug 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
     Plug 'flazz/vim-colorschemes'             " Colorschemes
@@ -59,7 +59,7 @@ call plug#begin('~/.vim/plugs')
     Plug 'terryma/vim-multiple-cursors'
 
     "-------------------=== Python  ===-----------------------------
-    Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
+    Plug 'python-mode/python-mode'                   " Python mode (docs, refactor, lints...)
     Plug 'scrooloose/syntastic'               " Syntax checking Plug for Vim
 
     "-------------------=== 

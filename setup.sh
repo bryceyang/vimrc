@@ -7,7 +7,6 @@ wrapper() {
   NORMAL="\033[0m"
 
   REPO_HTTPS="https://github.com/bryceyang/vimrc.git"
-  PLUGS="https://github.com/junegunn/vim-plug.git"
 
 echo "${BLUE}"
 cat << "HELLO_TEXT"
@@ -69,9 +68,10 @@ echo "${NORMAL}"
   printf "${BLUE}%s${NORMAL}\n" "Symlinking $VIM/vimrc with ~/.vimrc..."
   ln -fs $VIM/vimrc ~/.vimrc
 
-  if [ ! -d "$VIM/plugs/vim-plug" ]; then
+  if [ ! -d "$VIM/autoload" ]; then
       printf "${BLUE}%s${NORMAL}\n" "Installing plugs..."
-      env git clone --depth=1 $PLUGS "$VIM/plugs/vim-plug"
+      curl -fLo ${VIM}/autoload/plug.vim --create-dirs \
+              'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   fi
 
   if [ ! -f $VIM/colors/wombat256mod.vim ]; then
