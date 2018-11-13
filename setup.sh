@@ -7,7 +7,7 @@ wrapper() {
   NORMAL="\033[0m"
 
   REPO_HTTPS="https://github.com/poodarchu/vimrc.git"
-  VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
+  PLUGS_HTTPS="https://github.com/junegunn/vim-plug.git"
 
 echo "${BLUE}"
 cat << "HELLO_TEXT"
@@ -69,9 +69,9 @@ echo "${NORMAL}"
   printf "${BLUE}%s${NORMAL}\n" "Symlinking $VIM/vimrc with ~/.vimrc..."
   ln -fs $VIM/vimrc ~/.vimrc
 
-  if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
-      printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
-      env git clone --depth=1 $VUNDLE_HTTPS "$VIM/bundle/Vundle.vim"
+  if [ ! -d "$VIM/plugs/vim-plug" ]; then
+      printf "${BLUE}%s${NORMAL}\n" "Installing plugs..."
+      env git clone --depth=1 $PLUGS "$VIM/plugs/vim-plug"
   fi
 
   if [ ! -f $VIM/colors/wombat256mod.vim ]; then
@@ -87,6 +87,6 @@ echo "${NORMAL}"
 }
 
 wrapper
-vim +PluginInstall
-vim +PluginUpdate
+vim +PlugInstall
+vim +PlugUpdate
 

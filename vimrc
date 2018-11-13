@@ -9,7 +9,7 @@
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
-let $vundle=$vimhome."/bundle/Vundle.vim"
+let $plug=$vimhome."/plugs/vim-plug"
 
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
@@ -18,75 +18,71 @@ set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set nocompatible
 
 "=====================================================
-"" Vundle settings
+"" plug settings
 "=====================================================
-filetype off
-set rtp+=$vundle
-call vundle#begin()
+call plug#begin(~/.vim/plugs)
 
-    Plugin 'VundleVim/Vundle.vim'               " let Vundle manage Vundle, required
 
     "-------------------=== Code/Project navigation ===-------------
-    Plugin 'scrooloose/nerdtree'                " Project and file navigation
-    " Plugin 'majutsushi/tagbar'                  " Class/module browser
-    Plugin 'kien/ctrlp.vim'                     " Fast transitions on project files
-    Plugin 'tpope/vim-fugitive'
+    Plug 'scrooloose/nerdtree'                " Project and file navigation
+    " Plug 'majutsushi/tagbar'                  " Class/module browser
+    Plug 'kien/ctrlp.vim'                     " Fast transitions on project files
+    Plug 'tpope/vim-fugitive'
 
     "-------------------=== Other ===-------------------------------
-    Plugin 'bling/vim-airline'                  " Lean & mean status/tabline for vim
-    Plugin 'vim-airline/vim-airline-themes'     " Themes for airline
-    Plugin 'Lokaltog/powerline'                 " {'rtp': 'powerline/bindings/vim/'}   Powerline fonts plugin
-    Plugin 'rosenfeld/conque-term'              " Consoles as buffers
-    Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
-    Plugin 'flazz/vim-colorschemes'             " Colorschemes
-    " Plugin 'altercation/vim-colors-solarized'
-    " Plugin 'lifepillar/vim-solarized8'
-    " Plugin 'kristijanhusak/vim-hybrid-material'
-    " Plugin 'junegunn/seoul256.vim'
-    Plugin 'morhetz/gruvbox'
+    Plug 'bling/vim-airline'                  " Lean & mean status/tabline for vim
+    Plug 'vim-airline/vim-airline-themes'     " Themes for airline
+    Plug 'Lokaltog/powerline'                 " {'rtp': 'powerline/bindings/vim/'}   Powerline fonts Plug
+    Plug 'rosenfeld/conque-term'              " Consoles as buffers
+    Plug 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
+    Plug 'flazz/vim-colorschemes'             " Colorschemes
+    " Plug 'altercation/vim-colors-solarized'
+    " Plug 'lifepillar/vim-solarized8'
+    " Plug 'kristijanhusak/vim-hybrid-material'
+    " Plug 'junegunn/seoul256.vim'
+    Plug 'morhetz/gruvbox'
 
     "-------------------=== Snippets support ===--------------------
-    Plugin 'garbas/vim-snipmate'                " Snippets manager
-    Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
-    Plugin 'tomtom/tlib_vim'                    " dependencies #2
-    Plugin 'honza/vim-snippets'                 " snippets repo
+    Plug 'garbas/vim-snipmate'                " Snippets manager
+    Plug 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
+    Plug 'tomtom/tlib_vim'                    " dependencies #2
+    Plug 'honza/vim-snippets'                 " snippets repo
 
     "-------------------=== Languages support ===-------------------
-    Plugin 'tpope/vim-commentary'               " Comment stuff out
-    Plugin 'Rykka/riv.vim'                      " ReStructuredText plugin
-    " Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
-    Plugin 'Shougo/neocomplcache' 
-    " Plugin 'Raimondi/delimitMate'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'ervandew/supertab'
-    Plugin 'terryma/vim-multiple-cursors'
+    Plug 'tpope/vim-commentary'               " Comment stuff out
+    Plug 'Rykka/riv.vim'                      " ReStructuredText Plug
+    " Plug 'Valloric/YouCompleteMe'             " Autocomplete Plug
+    Plug 'Shougo/neocomplcache' 
+    " Plug 'Raimondi/delimitMate'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'ervandew/supertab'
+    Plug 'terryma/vim-multiple-cursors'
 
     "-------------------=== Python  ===-----------------------------
-    Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
-    Plugin 'scrooloose/syntastic'               " Syntax checking plugin for Vim
+    Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
+    Plug 'scrooloose/syntastic'               " Syntax checking Plug for Vim
 
     "-------------------=== 
-    " Plugin 'tpope/vim-markdown'
-    Plugin 'godlygeek/tabular'
-    Plugin 'plasticboy/vim-markdown'
+    " Plug 'tpope/vim-markdown'
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
     
     "-------------------=== Code Format ===------------------------
-    Plugin 'google/vim-maktaba'
-    Plugin 'google/vim-codefmt'
+    Plug 'google/vim-maktaba'
+    Plug 'google/vim-codefmt'
     " Also add Glaive, which is used to configure codefmt's maktaba flags. See
     " " `:help :Glaive` for usage.
-    Plugin 'google/vim-glaive'
+    Plug 'google/vim-glaive'
 
-    Plugin 'mhinz/vim-startify'
-    Plugin 'tpope/vim-eunuch'
+    Plug 'mhinz/vim-startify'
+    Plug 'tpope/vim-eunuch'
 
-call vundle#end()                           " required
+call plug#end()                           " required
 call glaive#Install()
 
 filetype on
 filetype plugin on
 filetype plugin indent on
-
 "=====================================================
 "" General settings
 "=====================================================
@@ -307,7 +303,7 @@ let g:riv_disable_folding=1
 "" Python settings
 "=====================================================
 
-" python executables for different plugins
+" python executables for different Plugs
 
 let g:pymode_python='python'
 let g:syntastic_python_python_exec='python'
