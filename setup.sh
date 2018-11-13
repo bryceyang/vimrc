@@ -6,8 +6,8 @@ wrapper() {
   BLUE="\033[0;36m"
   NORMAL="\033[0m"
 
-  REPO_HTTPS="https://github.com/poodarchu/vimrc.git"
-  PLUGS_HTTPS="https://github.com/junegunn/vim-plug.git"
+  REPO_HTTPS="https://github.com/bryceyang/vimrc.git"
+  PLUGS="https://github.com/junegunn/vim-plug.git"
 
 echo "${BLUE}"
 cat << "HELLO_TEXT"
