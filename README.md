@@ -1,5 +1,5 @@
 # vimrc
-my customized vimrc, using vundle to manage plugins.
+my customized vimrc, using vim-plug to manage plugins.
 
 clone this repo , then 
 
